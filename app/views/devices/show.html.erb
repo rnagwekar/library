@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @person %>
+</p>
+
+<p>
+  <strong>Device Id:</strong>
+  <%= @device.device_id %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @device.company %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @device.name %>
+</p>
+
+<p>
+  <strong>Lent by:</strong>
+  <%= getLenderName(@device.lent_by) %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @device.location %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @device.category %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @device.info %>
+</p>
+
+
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<%= link_to 'Back', devices_path %>

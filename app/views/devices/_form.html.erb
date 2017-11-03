@@ -1,0 +1,59 @@
+<%= form_for(device) do |f| %>
+  <% if device.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(device.errors.count, "error") %> prohibited this device from being saved:</h2>
+
+      <ul>
+      <% device.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Owner %>
+    <%= f.select :person_id, @people %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :device_id %>
+    <%= f.text_field :device_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lent_by %>
+    <%= f.select :lent_by, @people %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.select :location, @location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.select :category, @category %>
+  </div>
+
+  <div class="field">
+    <%= f.label :info %>
+    <%= f.text_field :info %>
+  </div>
+
+
+ <div class="actions">
+    <%= f.submit %>
+ </div>
+<% end %>

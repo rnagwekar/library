@@ -1,0 +1,16 @@
+<%= form_for(people) do |f| %>
+
+  <p>
+    <strong>Filter by location:</strong>
+    <%= select_tag(:filter_location, options_for_select(@location)) %>
+  </p>
+  <p>
+    <strong>Filter by owner:</strong>
+    <%= select_tag(:filter_owner, options_for_select(@people)) %>
+  </p>
+    
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
